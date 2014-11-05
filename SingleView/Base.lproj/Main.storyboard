@@ -42,16 +42,15 @@
                             <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="8YI-9r-Ddy"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="DL0-tI-HNi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="n7j-rT-6hv">
+                <swipeGestureRecognizer direction="right" id="n7j-rT-6hv">
                     <connections>
-                        <segue destination="Ok9-EO-LBc" kind="show" id="2Q6-Ft-aLf"/>
+                        <segue destination="Ok9-EO-LBc" kind="custom" identifier="Custom from main to one" customClass="CustomSegue" id="2Q6-Ft-aLf"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="513" y="544"/>
+            <point key="canvasLocation" x="605.25" y="685"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zRi-zg-iDe">
@@ -95,11 +94,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1F-1r-jGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="bax-2b-az1">
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="Y46-IC-hCD"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="Custom from 1 to main" customClass="CustomSegue" id="Y46-IC-hCD"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1251" y="544"/>
+            <point key="canvasLocation" x="1405.5" y="685"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
