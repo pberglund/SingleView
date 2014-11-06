@@ -25,28 +25,17 @@
                                     <rect key="frame" x="353" y="182" width="82" height="21"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coke" translatesAutoresizingMaskIntoConstraints="NO" id="uxu-MU-MKS">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="800" height="605"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="800" height="813"/>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Wdi-Qb-md0"/>
-                                <exclude reference="uxu-MU-MKS"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
                             <mask key="subviews">
                                 <include reference="Wdi-Qb-md0"/>
-                                <include reference="uxu-MU-MKS"/>
                             </mask>
                         </variation>
                         <connections>
@@ -112,8 +101,5 @@
             <point key="canvasLocation" x="1405.5" y="685"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="coke" width="275" height="183"/>
-    </resources>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
 </document>
