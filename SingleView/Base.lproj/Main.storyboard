@@ -5,6 +5,27 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="i6H-Du-J8x">
+            <objects>
+                <viewController id="Jfd-hA-yEI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bvs-eX-iCj"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZa-yL-GKM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WyH-m4-okD">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="IFm-jI-axF"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ieD-zR-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347.25" y="1326.75"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="StartPage" modalTransitionStyle="partialCurl" id="BYZ-38-t0r" customClass="ViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,15 +61,21 @@
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="8YI-9r-Ddy"/>
+                            <outletCollection property="gestureRecognizers" destination="kJh-5b-keh" appends="YES" id="vIe-4O-txl"/>
                         </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="n7j-rT-6hv">
                     <connections>
-                        <segue destination="Ok9-EO-LBc" kind="custom" identifier="Custom from main to one" customClass="RightLeftSegue" id="2Q6-Ft-aLf"/>
+                        <segue destination="Ok9-EO-LBc" kind="custom" identifier="Slide from main to one" customClass="RightLeftSegue" id="2Q6-Ft-aLf"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="kJh-5b-keh">
+                    <connections>
+                        <segue destination="Ok9-EO-LBc" kind="custom" identifier="Tap from main to one" customClass="RightLeftSegue" id="UY2-4i-Dwv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="636.75" y="666"/>
         </scene>
@@ -80,5 +107,8 @@
             <point key="canvasLocation" x="1335.75" y="666"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UY2-4i-Dwv"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
 </document>
