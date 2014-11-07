@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0404F79D1A0D15B300EC2251 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0404F79C1A0D15B300EC2251 /* DashBoardViewController.swift */; };
 		044756A21A0ACA7A00C1F9F6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044756A11A0ACA7A00C1F9F6 /* QuartzCore.framework */; };
 		044756A61A0ACBE800C1F9F6 /* RightLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 044756A51A0ACBE800C1F9F6 /* RightLeftSegue.m */; };
 		044756A91A0C047200C1F9F6 /* LeftRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 044756A81A0C047200C1F9F6 /* LeftRightSegue.m */; };
+		044756AB1A0C314D00C1F9F6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044756AA1A0C314D00C1F9F6 /* MediaPlayer.framework */; };
 		04DD483F1A0A73AD005CC7A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD483E1A0A73AD005CC7A8 /* AppDelegate.swift */; };
 		04DD48411A0A73AD005CC7A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD48401A0A73AD005CC7A8 /* ViewController.swift */; };
 		04DD48441A0A73AD005CC7A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DD48421A0A73AD005CC7A8 /* Main.storyboard */; };
@@ -29,12 +31,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0404F79C1A0D15B300EC2251 /* DashBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashBoardViewController.swift; path = ../DashBoardViewController.swift; sourceTree = "<group>"; };
 		044756A11A0ACA7A00C1F9F6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		044756A31A0ACBBD00C1F9F6 /* RightLeftSegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightLeftSegue.h; sourceTree = "<group>"; };
 		044756A41A0ACBE700C1F9F6 /* SingleView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SingleView-Bridging-Header.h"; sourceTree = "<group>"; };
 		044756A51A0ACBE800C1F9F6 /* RightLeftSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightLeftSegue.m; sourceTree = "<group>"; };
 		044756A71A0C044C00C1F9F6 /* LeftRightSegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftRightSegue.h; sourceTree = "<group>"; };
 		044756A81A0C047200C1F9F6 /* LeftRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftRightSegue.m; sourceTree = "<group>"; };
+		044756AA1A0C314D00C1F9F6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		04DD48391A0A73AD005CC7A8 /* SingleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DD483D1A0A73AD005CC7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DD483E1A0A73AD005CC7A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044756AB1A0C314D00C1F9F6 /* MediaPlayer.framework in Frameworks */,
 				044756A21A0ACA7A00C1F9F6 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +74,7 @@
 		04DD48301A0A73AD005CC7A8 = {
 			isa = PBXGroup;
 			children = (
+				044756AA1A0C314D00C1F9F6 /* MediaPlayer.framework */,
 				044756A11A0ACA7A00C1F9F6 /* QuartzCore.framework */,
 				04DD483B1A0A73AD005CC7A8 /* SingleView */,
 				04DD48511A0A73AD005CC7A8 /* SingleViewTests */,
@@ -88,6 +94,7 @@
 		04DD483B1A0A73AD005CC7A8 /* SingleView */ = {
 			isa = PBXGroup;
 			children = (
+				0404F79C1A0D15B300EC2251 /* DashBoardViewController.swift */,
 				04DD483E1A0A73AD005CC7A8 /* AppDelegate.swift */,
 				04DD48401A0A73AD005CC7A8 /* ViewController.swift */,
 				04DD48421A0A73AD005CC7A8 /* Main.storyboard */,
@@ -229,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0404F79D1A0D15B300EC2251 /* DashBoardViewController.swift in Sources */,
 				04DD48411A0A73AD005CC7A8 /* ViewController.swift in Sources */,
 				044756A91A0C047200C1F9F6 /* LeftRightSegue.m in Sources */,
 				04DD483F1A0A73AD005CC7A8 /* AppDelegate.swift in Sources */,

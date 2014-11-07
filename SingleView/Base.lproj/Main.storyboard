@@ -44,18 +44,18 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="n7j-rT-6hv">
+                <swipeGestureRecognizer direction="left" id="n7j-rT-6hv">
                     <connections>
                         <segue destination="Ok9-EO-LBc" kind="custom" identifier="Custom from main to one" customClass="RightLeftSegue" id="2Q6-Ft-aLf"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="605.25" y="684.75"/>
+            <point key="canvasLocation" x="636.75" y="666"/>
         </scene>
-        <!--View Controller-->
+        <!--Dash Board Controller-->
         <scene sceneID="zRi-zg-iDe">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" id="Ok9-EO-LBc" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="partialCurl" id="Ok9-EO-LBc" customClass="DashBoardController" customModule="SingleView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nhL-kf-m1d"/>
                         <viewControllerLayoutGuide type="bottom" id="gij-2M-Oti"/>
@@ -92,13 +92,13 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1F-1r-jGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="bax-2b-az1">
+                <swipeGestureRecognizer direction="right" id="bax-2b-az1">
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="Custom from 1 to main" customClass="LeftRightSegue" id="Y46-IC-hCD"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1405.5" y="685"/>
+            <point key="canvasLocation" x="1335.75" y="666"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
