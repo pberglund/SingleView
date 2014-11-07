@@ -18,6 +18,7 @@
 		04DD48461A0A73AD005CC7A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DD48451A0A73AD005CC7A8 /* Images.xcassets */; };
 		04DD48491A0A73AD005CC7A8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DD48471A0A73AD005CC7A8 /* LaunchScreen.xib */; };
 		04DD48551A0A73AD005CC7A8 /* SingleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD48541A0A73AD005CC7A8 /* SingleViewTests.swift */; };
+		04DF1A111A0D874700194259 /* Big_Buck_Bunny_Trailer.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 04DF1A101A0D874700194259 /* Big_Buck_Bunny_Trailer.m4v */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		04DD484E1A0A73AD005CC7A8 /* SingleViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingleViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DD48531A0A73AD005CC7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DD48541A0A73AD005CC7A8 /* SingleViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewTests.swift; sourceTree = "<group>"; };
+		04DF1A101A0D874700194259 /* Big_Buck_Bunny_Trailer.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Big_Buck_Bunny_Trailer.m4v; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				04DD48401A0A73AD005CC7A8 /* ViewController.swift */,
 				04DD48421A0A73AD005CC7A8 /* Main.storyboard */,
 				04DD48451A0A73AD005CC7A8 /* Images.xcassets */,
+				04DF1A101A0D874700194259 /* Big_Buck_Bunny_Trailer.m4v */,
 				04DD48471A0A73AD005CC7A8 /* LaunchScreen.xib */,
 				04DD483C1A0A73AD005CC7A8 /* Supporting Files */,
 				044756A31A0ACBBD00C1F9F6 /* RightLeftSegue.h */,
@@ -218,6 +221,7 @@
 			files = (
 				04DD48441A0A73AD005CC7A8 /* Main.storyboard in Resources */,
 				04DD48491A0A73AD005CC7A8 /* LaunchScreen.xib in Resources */,
+				04DF1A111A0D874700194259 /* Big_Buck_Bunny_Trailer.m4v in Resources */,
 				04DD48461A0A73AD005CC7A8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

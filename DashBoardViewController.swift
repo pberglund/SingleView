@@ -8,11 +8,12 @@
 
 import UIKit
 import MediaPlayer
+import AVFoundation
 
 class DashBoardController : UIViewController {
     
     var moviePlayer:MPMoviePlayerController!
-    
+    //var moviePlayer:AVPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,10 @@ class DashBoardController : UIViewController {
         //self.view.backgroundColor = UIColor(patternImage: image!)
         
         var url:NSURL = NSURL(string: "http://jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v")!
-
+        
+        
         moviePlayer = MPMoviePlayerController(contentURL: url)
-
-        //moviePlayer.view.frame = CGRect(x: 25, y: 25, width: 900, height: 750)
+//moviePlayer.view.frame = CGRect(x: 25, y: 25, width: 900, height: 750)
 
         moviePlayer.view.frame = self.view.bounds
         
@@ -40,16 +41,17 @@ class DashBoardController : UIViewController {
 
         moviePlayer.controlStyle = MPMovieControlStyle.Embedded
         
-        moviePlayer.initialPlaybackTime = 41;
+        moviePlayer.initialPlaybackTime = 28;
         
         self.view.addSubview(moviePlayer.view)
         
         
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayerDidFinishPlaying:", name: MPMoviePlayerPlaybackDidFinishNotification, object: moviePlayer)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayerOver:", name: MPMoviePlayerPlaybackDidFinishNotification, object: moviePlayer)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayerOver:", name: MPMoviePlayerDidExitFullscreenNotification, object: moviePlayer)
 
         
         
-        //self.view.bringSubviewToFront(moviePlayer.view)
+        self.view.bringSubviewToFront(moviePlayer.view)
 
         moviePlayer.play()
         
@@ -57,7 +59,7 @@ class DashBoardController : UIViewController {
     }
     
     @objc
-    func moviePlayerDidFinishPlaying(notification: NSNotification){
+    func moviePlayerOver(notification: NSNotification){
     //Action take on Notification
         println("In moviePlayerDidFinishPlaying");
         //let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("StartPage")
