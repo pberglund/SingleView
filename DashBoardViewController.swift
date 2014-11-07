@@ -45,7 +45,7 @@ class DashBoardController : UIViewController {
         self.view.addSubview(moviePlayer.view)
         
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayerDidFinishPlaying:", name: MPMoviePlayerPlaybackDidFinishNotification, object: moviePlayer)
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayerDidFinishPlaying:", name: MPMoviePlayerPlaybackDidFinishNotification, object: moviePlayer)
 
         
         

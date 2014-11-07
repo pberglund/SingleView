@@ -17,10 +17,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let image = UIImage(named: "start.jpg")
-        //let resized = RBResizeImage(image!, targetSize: CGSizeMake(100,100))
+        let image = UIImage(named: "start.jpg")
+        let resized = RBResizeImage(image!, targetSize: self.view.bounds.size)
         
-        //self.view.backgroundColor = UIColor(patternImage: image!)
+        self.view.backgroundColor = UIColor(patternImage: resized)
 
     }
 
