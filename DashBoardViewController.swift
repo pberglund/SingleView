@@ -30,16 +30,45 @@ class DashBoardController : UIViewController {
 
         moviePlayer.view.frame = self.view.bounds
         
-        self.view.addSubview(moviePlayer.view)
-
         moviePlayer.fullscreen = true
         
-        moviePlayer.scalingMode = MPMovieScalingMode.AspectFill
+        moviePlayer.shouldAutoplay = true
+        
+        //moviePlayer.movieSourceType = MPMovieSourceType.Streaming
+        
+        //moviePlayer.scalingMode = MPMovieScalingMode.AspectFill
 
         moviePlayer.controlStyle = MPMovieControlStyle.Embedded
+        
+        moviePlayer.initialPlaybackTime = 41;
+        
+        self.view.addSubview(moviePlayer.view)
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayerDidFinishPlaying:", name: MPMoviePlayerPlaybackDidFinishNotification, object: moviePlayer)
 
         
+        
+        //self.view.bringSubviewToFront(moviePlayer.view)
+
+        moviePlayer.play()
+        
+        println("Playing Movie");
     }
+    
+    @objc
+    func moviePlayerDidFinishPlaying(notification: NSNotification){
+    //Action take on Notification
+        println("In moviePlayerDidFinishPlaying");
+        //let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("StartPage")
+        //self.showViewController(vc as UIViewController, sender: vc)
+        self.performSegueWithIdentifier("Custom from 1 to main", sender: self)
+
+        println("Show initial controller")
+
+
+}
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
