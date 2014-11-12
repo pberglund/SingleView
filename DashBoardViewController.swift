@@ -18,19 +18,15 @@ class DashBoardController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let image = UIImage(named: "start.jpg")
-        //let resized = RBResizeImage(image!, targetSize: CGSizeMake(100,100))
-        
-        //self.view.backgroundColor = UIColor(patternImage: image!)
-        
-        var url:NSURL = NSURL(string: "http://jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v")!
-        
+        let bundle = NSBundle.mainBundle()
+        let pathhtml = bundle.pathForResource("Big_Buck_Bunny_Trailer", ofType: "m4v")
+        var url:NSURL = NSURL(fileURLWithPath: pathhtml!)!
+
         
         moviePlayer = MPMoviePlayerController(contentURL: url)
-//moviePlayer.view.frame = CGRect(x: 25, y: 25, width: 900, height: 750)
 
         moviePlayer.view.frame = self.view.bounds
-        
+    
         moviePlayer.fullscreen = true
         
         moviePlayer.shouldAutoplay = true
