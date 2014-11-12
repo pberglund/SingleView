@@ -4,31 +4,90 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Slider View Controller-->
         <scene sceneID="i6H-Du-J8x">
             <objects>
-                <viewController id="Jfd-hA-yEI" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ieD-zR-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="2SecondPage" id="Jfd-hA-yEI" customClass="SliderViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bvs-eX-iCj"/>
                         <viewControllerLayoutGuide type="bottom" id="pZa-yL-GKM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WyH-m4-okD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0z-FQ-lyJ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="357" y="33" width="104" height="21"/>
+                                </variation>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKl-BV-Huq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Below View Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-fe-YGL">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="83" y="486" width="155" height="21"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="v0A-fe-YGL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="249" y="97" width="320" height="568"/>
+                                    <mask key="subviews">
+                                        <include reference="v0A-fe-YGL"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.203387659" blue="0.19411627300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="C0z-FQ-lyJ"/>
+                                <exclude reference="fKl-BV-Huq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="C0z-FQ-lyJ"/>
+                                <include reference="fKl-BV-Huq"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="IFm-jI-axF"/>
+                            <outletCollection property="gestureRecognizers" destination="Rfn-5r-gtT" appends="YES" id="aZ9-tB-apl"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="hiddenView" destination="fKl-BV-Huq" id="lTT-pn-Wck"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ieD-zR-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Rfn-5r-gtT">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="custom" customClass="LeftRightSegue" id="CXw-YG-kyI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="347.25" y="1326.75"/>
+            <point key="canvasLocation" x="1359.75" y="1014"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="StartPage" modalTransitionStyle="partialCurl" id="BYZ-38-t0r" customClass="ViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1StartPage" modalTransitionStyle="partialCurl" id="BYZ-38-t0r" customClass="ViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -62,6 +121,7 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="8YI-9r-Ddy"/>
                             <outletCollection property="gestureRecognizers" destination="kJh-5b-keh" appends="YES" id="vIe-4O-txl"/>
+                            <outletCollection property="gestureRecognizers" destination="iG8-cc-l2z" appends="YES" id="KhN-kW-gPI"/>
                         </connections>
                     </view>
                 </viewController>
@@ -76,13 +136,18 @@
                         <segue destination="Ok9-EO-LBc" kind="custom" identifier="Tap from main to one" customClass="RightLeftSegue" id="UY2-4i-Dwv"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="iG8-cc-l2z">
+                    <connections>
+                        <segue destination="Jfd-hA-yEI" kind="custom" customClass="RightLeftSegue" id="TP3-aN-mk5"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="636.75" y="666"/>
         </scene>
         <!--Dash Board Controller-->
         <scene sceneID="zRi-zg-iDe">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" id="Ok9-EO-LBc" customClass="DashBoardController" customModule="SingleView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="3VideoPage" modalTransitionStyle="partialCurl" id="Ok9-EO-LBc" customClass="DashBoardController" customModule="SingleView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nhL-kf-m1d"/>
                         <viewControllerLayoutGuide type="bottom" id="gij-2M-Oti"/>
@@ -104,10 +169,11 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1335.75" y="666"/>
+            <point key="canvasLocation" x="1359.75" y="313.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="CXw-YG-kyI"/>
         <segue reference="UY2-4i-Dwv"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
