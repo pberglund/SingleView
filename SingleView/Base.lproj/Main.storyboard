@@ -82,7 +82,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1359.75" y="1014"/>
+            <point key="canvasLocation" x="347.25" y="1637.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -121,7 +121,7 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="8YI-9r-Ddy"/>
                             <outletCollection property="gestureRecognizers" destination="kJh-5b-keh" appends="YES" id="vIe-4O-txl"/>
-                            <outletCollection property="gestureRecognizers" destination="iG8-cc-l2z" appends="YES" id="KhN-kW-gPI"/>
+                            <outletCollection property="gestureRecognizers" destination="rPe-4G-2a9" appends="YES" id="AA4-Qq-HoY"/>
                         </connections>
                     </view>
                 </viewController>
@@ -136,9 +136,9 @@
                         <segue destination="Ok9-EO-LBc" kind="custom" identifier="Tap from main to one" customClass="RightLeftSegue" id="UY2-4i-Dwv"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="iG8-cc-l2z">
+                <swipeGestureRecognizer direction="down" id="rPe-4G-2a9">
                     <connections>
-                        <segue destination="Jfd-hA-yEI" kind="custom" customClass="RightLeftSegue" id="TP3-aN-mk5"/>
+                        <segue destination="pKs-Wo-MHM" kind="show" id="iPV-Cl-k7Q"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -170,6 +170,116 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1359.75" y="313.5"/>
+        </scene>
+        <!--Slider View Controller-->
+        <scene sceneID="9Mu-yh-lNK">
+            <objects>
+                <viewController storyboardIdentifier="4thirdPage" id="pKs-Wo-MHM" customClass="SliderViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V6c-Tl-iut"/>
+                        <viewControllerLayoutGuide type="bottom" id="zfw-oD-7we"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lzd-lu-DUO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZU4-oA-i6W">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="357" y="33" width="83" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwr-d0-XhD">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Slide it">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="377" y="89" width="47" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="slideIt:" destination="pKs-Wo-MHM" eventType="touchUpInside" id="e5m-4X-RHH"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTX-tq-6Xx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First View Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiH-QO-ipu">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="24" y="251" width="141" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ8-1R-NUb">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="1630" y="260" width="101" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bq-Ex-P04">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Middle Page Label">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="979" y="251" width="128" height="30"/>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="yiH-QO-ipu"/>
+                                        <exclude reference="DZ8-1R-NUb"/>
+                                        <exclude reference="8bq-Ex-P04"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="177" width="2017" height="568"/>
+                                    <mask key="subviews">
+                                        <include reference="yiH-QO-ipu"/>
+                                        <include reference="DZ8-1R-NUb"/>
+                                        <include reference="8bq-Ex-P04"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11245991568657676" green="0.7067794687319704" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ZU4-oA-i6W"/>
+                                <exclude reference="Dwr-d0-XhD"/>
+                                <exclude reference="ZTX-tq-6Xx"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="ZU4-oA-i6W"/>
+                                <include reference="Dwr-d0-XhD"/>
+                                <include reference="ZTX-tq-6Xx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="hiddenView" destination="ZTX-tq-6Xx" id="7oh-nu-1iQ"/>
+                        <outlet property="slideItButton" destination="Dwr-d0-XhD" id="TxR-5V-xh1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6z-9t-4oJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359.75" y="1056.75"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

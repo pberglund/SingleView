@@ -13,32 +13,42 @@ class SliderViewController : UIViewController {
     
     
     
+    @IBOutlet weak var slideItButton: UIButton!
     @IBOutlet weak var hiddenView: UIView!
     //var moviePlayer:AVPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    @IBAction func slideIt(sender : AnyObject) {
+        
+        //let yPosition:CGFloat = 116
+        //let xPosition:CGFloat = 0
         
         
-        let width = 200
-        let height = 320
-        let yPosition:CGFloat = 150
-        let xPosition:CGFloat = 249
-
+        //hiddenView.frame = CGRectMake(xPosition, yPosition, 320, 568)
         
-        hiddenView.frame = CGRectMake(xPosition, 600, 320, 568)
-
+        let currFrame = hiddenView.frame
         
-        let newFrame:CGRect = CGRectMake(xPosition, yPosition, 320, 568);
+        let newX = currFrame.origin.x - 200
+        let newY = currFrame.origin.y
+        //let newWidth
+        
+        
+        let newFrame:CGRect = CGRectMake(newX, newY, currFrame.width, currFrame.height);
         
         UIView.animateWithDuration(3.0, animations: {
             
-        self.hiddenView.frame = newFrame
-        })
+            self.hiddenView.frame = newFrame
+            println("slinding...")
+            })
         
         println("In SliderViewController");
+        
     }
-    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
