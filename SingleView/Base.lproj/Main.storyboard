@@ -7,7 +7,6 @@
         <!--Slider View Controller-->
         <scene sceneID="i6H-Du-J8x">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ieD-zR-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="2SecondPage" id="Jfd-hA-yEI" customClass="SliderViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bvs-eX-iCj"/>
@@ -76,13 +75,14 @@
                         <outlet property="hiddenView" destination="fKl-BV-Huq" id="lTT-pn-Wck"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ieD-zR-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Rfn-5r-gtT">
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="custom" customClass="LeftRightSegue" id="CXw-YG-kyI"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="347.25" y="1637.25"/>
+            <point key="canvasLocation" x="1087.5" y="917.25"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -98,6 +98,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdi-Qb-md0">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -138,11 +139,11 @@
                 </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="rPe-4G-2a9">
                     <connections>
-                        <segue destination="pKs-Wo-MHM" kind="show" id="iPV-Cl-k7Q"/>
+                        <segue destination="Jfd-hA-yEI" kind="custom" identifier="Right left from main to slider" customClass="RightLeftSegue" id="jP5-Wf-7AI"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="636.75" y="666"/>
+            <point key="canvasLocation" x="372" y="648.75"/>
         </scene>
         <!--Dash Board Controller-->
         <scene sceneID="zRi-zg-iDe">
@@ -169,7 +170,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1359.75" y="313.5"/>
+            <point key="canvasLocation" x="1341.75" y="295.5"/>
         </scene>
         <!--Slider View Controller-->
         <scene sceneID="9Mu-yh-lNK">
@@ -337,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6z-9t-4oJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1359.75" y="1056.75"/>
+            <point key="canvasLocation" x="321.75" y="1707"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
