@@ -8,8 +8,15 @@
 
 import UIKit
 
-class SliderViewController : BaseViewController {
+@IBDesignable class SliderViewController : BaseViewController {
     
+    var videoPath:String!
+    @IBInspectable var viewLabel: String!
+    var testPath: String!
+
+
+    
+    @IBOutlet weak var label: UILabel!
     let transitionDistance:CGFloat = 300
     var lastDirection:Direction = Direction.None
     @IBOutlet weak var sliderView: UIView!
@@ -24,7 +31,11 @@ class SliderViewController : BaseViewController {
         
         self.sliderView.frame = self.view.frame;
 
+        //self.videoPath = self.label.text!
         
+        println(viewLabel)
+        println(self.testPath)
+
         //self.sliderView.frame = CGRectMake(0, 350, sliderView.frame.width, sliderView.frame.height);
         
         //let image = UIImage(named: "start.jpg")

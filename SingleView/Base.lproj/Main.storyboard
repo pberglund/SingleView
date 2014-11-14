@@ -57,7 +57,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="1200" height="1099"/>
+                                    <rect key="frame" x="-11" y="102" width="1200" height="1099"/>
                                     <mask key="subviews">
                                         <include reference="v0A-fe-YGL"/>
                                         <include reference="aU7-4P-C6J"/>
@@ -90,7 +90,12 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1200" height="768"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="testPath" value="testRuntimeAtrributes"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="viewLabel" value="tetsLabel"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="label" destination="C0z-FQ-lyJ" id="lHP-MS-I0e"/>
                         <outlet property="sliderView" destination="fKl-BV-Huq" id="b5W-uS-J12"/>
                     </connections>
                 </viewController>
