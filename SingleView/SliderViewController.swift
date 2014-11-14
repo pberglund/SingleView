@@ -39,17 +39,17 @@ class SliderViewController : BaseViewController {
     @IBAction func swipedUp(sender: AnyObject) {
         
         println("swiped up...")
-        slide(Direction.Up);
+        slide(Direction.Down);
     }
     @IBAction func swipedDown(sender: AnyObject) {
         println("swiped down...")
-        slide(Direction.Down);
+        slide(Direction.Up);
     }
     
     func slide(direction: Direction){
         
         // If we havent slide, and they want to slide up, return
-        if(lastDirection == Direction.None && direction == Direction.Up){
+        if(lastDirection == Direction.None && direction == Direction.Down){
             return;
         }
         
