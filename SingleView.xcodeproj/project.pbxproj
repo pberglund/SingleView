@@ -13,6 +13,7 @@
 		044756A91A0C047200C1F9F6 /* LeftRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 044756A81A0C047200C1F9F6 /* LeftRightSegue.m */; };
 		044756AB1A0C314D00C1F9F6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044756AA1A0C314D00C1F9F6 /* MediaPlayer.framework */; };
 		048C19691A13C16B009E5CAC /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C19681A13C16B009E5CAC /* SliderViewController.swift */; };
+		04B1531D1A169BE500277C8E /* BaseUiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B1531C1A169BE500277C8E /* BaseUiViewController.swift */; };
 		04DD483F1A0A73AD005CC7A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD483E1A0A73AD005CC7A8 /* AppDelegate.swift */; };
 		04DD48411A0A73AD005CC7A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD48401A0A73AD005CC7A8 /* ViewController.swift */; };
 		04DD48441A0A73AD005CC7A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DD48421A0A73AD005CC7A8 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		044756A81A0C047200C1F9F6 /* LeftRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftRightSegue.m; sourceTree = "<group>"; };
 		044756AA1A0C314D00C1F9F6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		048C19681A13C16B009E5CAC /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		04B1531C1A169BE500277C8E /* BaseUiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUiViewController.swift; sourceTree = "<group>"; };
 		04DD48391A0A73AD005CC7A8 /* SingleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DD483D1A0A73AD005CC7A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DD483E1A0A73AD005CC7A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				048C19681A13C16B009E5CAC /* SliderViewController.swift */,
 				0404F79C1A0D15B300EC2251 /* DashBoardViewController.swift */,
+				04B1531C1A169BE500277C8E /* BaseUiViewController.swift */,
 				04DD483E1A0A73AD005CC7A8 /* AppDelegate.swift */,
 				04DD48401A0A73AD005CC7A8 /* ViewController.swift */,
 				04DD48421A0A73AD005CC7A8 /* Main.storyboard */,
@@ -249,6 +252,7 @@
 				048C19691A13C16B009E5CAC /* SliderViewController.swift in Sources */,
 				04DD483F1A0A73AD005CC7A8 /* AppDelegate.swift in Sources */,
 				044756A61A0ACBE800C1F9F6 /* RightLeftSegue.m in Sources */,
+				04B1531D1A169BE500277C8E /* BaseUiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

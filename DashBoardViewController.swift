@@ -10,7 +10,7 @@ import UIKit
 import MediaPlayer
 import AVFoundation
 
-class DashBoardController : UIViewController {
+class DashBoardController : BaseViewController {
     
     var moviePlayer:MPMoviePlayerController!
     //var moviePlayer:AVPlayer!

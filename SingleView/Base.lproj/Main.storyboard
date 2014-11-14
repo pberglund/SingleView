@@ -35,36 +35,38 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="83" y="486" width="155" height="21"/>
+                                            <rect key="frame" x="164" y="776" width="155" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="initial view copntent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU7-4P-C6J">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                            <rect key="frame" x="165" y="418" width="152" height="21"/>
                                         </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="v0A-fe-YGL"/>
+                                        <exclude reference="aU7-4P-C6J"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="249" y="150" width="320" height="568"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1200" height="1099"/>
                                     <mask key="subviews">
                                         <include reference="v0A-fe-YGL"/>
+                                        <include reference="aU7-4P-C6J"/>
                                     </mask>
                                 </variation>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImQ-w5-vQD">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Expand/ Collapse">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="52" y="391" width="122" height="30"/>
-                                </variation>
                                 <connections>
-                                    <action selector="buttonPushed:" destination="Jfd-hA-yEI" eventType="touchUpInside" id="6dt-wN-zeU"/>
+                                    <outletCollection property="gestureRecognizers" destination="vlP-6q-ni2" appends="YES" id="Mpc-64-z45"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.203387659" blue="0.19411627300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -72,23 +74,23 @@
                             <mask key="subviews">
                                 <exclude reference="C0z-FQ-lyJ"/>
                                 <exclude reference="fKl-BV-Huq"/>
-                                <exclude reference="ImQ-w5-vQD"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="C0z-FQ-lyJ"/>
                                 <include reference="fKl-BV-Huq"/>
-                                <include reference="ImQ-w5-vQD"/>
                             </mask>
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="IFm-jI-axF"/>
                             <outletCollection property="gestureRecognizers" destination="Rfn-5r-gtT" appends="YES" id="aZ9-tB-apl"/>
+                            <outletCollection property="gestureRecognizers" destination="om9-Yn-H1Y" appends="YES" id="2Gr-Rj-H9u"/>
                         </connections>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1200" height="768"/>
                     <connections>
-                        <outlet property="expandCollapseButton" destination="ImQ-w5-vQD" id="AEu-CN-3Ux"/>
                         <outlet property="sliderView" destination="fKl-BV-Huq" id="b5W-uS-J12"/>
                     </connections>
                 </viewController>
@@ -98,8 +100,18 @@
                         <segue destination="BYZ-38-t0r" kind="custom" customClass="LeftRightSegue" id="CXw-YG-kyI"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="om9-Yn-H1Y">
+                    <connections>
+                        <action selector="swipedDown:" destination="Jfd-hA-yEI" id="xCu-Oa-KE9"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="vlP-6q-ni2">
+                    <connections>
+                        <action selector="swipedUp:" destination="Jfd-hA-yEI" id="xr4-uC-Ilz"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1087.5" y="917.25"/>
+            <point key="canvasLocation" x="1407.75" y="924.75"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -142,6 +154,8 @@
                             <outletCollection property="gestureRecognizers" destination="rPe-4G-2a9" appends="YES" id="AA4-Qq-HoY"/>
                         </connections>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="n7j-rT-6hv">
@@ -179,6 +193,8 @@
                             <outletCollection property="gestureRecognizers" destination="bax-2b-az1" appends="YES" id="jLJ-Zq-q2M"/>
                         </connections>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1F-1r-jGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="bax-2b-az1">
