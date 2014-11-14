@@ -18,6 +18,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0z-FQ-lyJ">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,6 +52,19 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImQ-w5-vQD">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Expand/ Collapse">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="52" y="391" width="122" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonPushed:" destination="Jfd-hA-yEI" eventType="touchUpInside" id="6dt-wN-zeU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.203387659" blue="0.19411627300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -58,12 +72,14 @@
                             <mask key="subviews">
                                 <exclude reference="C0z-FQ-lyJ"/>
                                 <exclude reference="fKl-BV-Huq"/>
+                                <exclude reference="ImQ-w5-vQD"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="C0z-FQ-lyJ"/>
                                 <include reference="fKl-BV-Huq"/>
+                                <include reference="ImQ-w5-vQD"/>
                             </mask>
                         </variation>
                         <connections>
@@ -72,7 +88,8 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="hiddenView" destination="fKl-BV-Huq" id="lTT-pn-Wck"/>
+                        <outlet property="expandCollapseButton" destination="ImQ-w5-vQD" id="AEu-CN-3Ux"/>
+                        <outlet property="sliderView" destination="fKl-BV-Huq" id="b5W-uS-J12"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieD-zR-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>

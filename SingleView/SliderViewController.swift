@@ -10,97 +10,60 @@ import UIKit
 
 class SliderViewController : UIViewController {
     
-    var viewArray:[UIView]!
-    var currentIndex:Int!
+    let transitionDistance:CGFloat = 300
+    var goUp = true
     
-    
-    @IBOutlet weak var slideItButton: UIButton!
-    @IBOutlet weak var hiddenView: UIView!
-    
-    @IBOutlet weak var firstPageView: UIView!
-    @IBOutlet weak var secondPageView: UIView!
-    
-    //var moviePlayer:AVPlayer!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        viewArray = [firstPageView, secondPageView]
-        currentIndex = 0
+    @IBAction func buttonPushed(sender: AnyObject) {
+        println("pushed...")
         
-        resetViews()
-
+        let position = sliderView.frame.origin.y;
         
-    }
-    
-    
-    @IBAction func slideIt(sender : AnyObject) {
-        
-        
-        
-    }
-    
-    func resetViews(){
-        
-        if viewArray == nil{
-            RETURN
+        if goUp{
+            slideIt(goUp)
+        }
+        else{
+            slideIt(goUp)
         }
         
-        
-        for item in viewArray {
-            item.alpha = 0;
-            self.view.sendSubviewToBack(item)
-        }
+        goUp = !goUp;
     }
     
-    func slideIt(left:Bool){
+    @IBOutlet weak var sliderView: UIView!
+    
+    @IBOutlet weak var expandCollapseButton: UIButton!
+    
+    
+    func slideIt(up:Bool){
         println("In slideIt")
         
-        resetViews()
+        let currFrame = sliderView.frame
         
-        self.view.bringSubviewToFront(hiddenView)
+        let newX:CGFloat = currFrame.origin.x
+        var newY:CGFloat = currFrame.origin.y
         
-        let currFrame = hiddenView.frame
         
-        let newX = currFrame.origin.x - 384
-        let newY = currFrame.origin.y
-        
+        if up
+        {
+            newY -= transitionDistance
+        }
+        else{
+            newY += transitionDistance
+        }
+
         
         let newFrame:CGRect = CGRectMake(newX, newY, currFrame.width, currFrame.height);
         
-        UIView.animateWithDuration(3.0, animations: {
+        UIView.animateWithDuration(2.0, animations: {
             
-            self.hiddenView.frame = newFrame
-            println("slinding...")
+            self.sliderView.frame = newFrame
+            println("sliding...")
             
             }, completion: {
             (value: Bool) in
             
-            if left
-            {
+                println("Done sliding")
                 
-                if self.currentIndex >= 0
-                {
-                    let newPage = self.viewArray[self.currentIndex]
-                    newPage.alpha = 1;
-                    self.currentIndex = self.currentIndex + 1
-                
-                    println("showed it");
-                }
-                
-            }
-            else{
-                
-                if self.currentIndex < self.viewArray.count
-                {
-                    let newPage = self.viewArray[self.currentIndex]
-                    newPage.alpha = 1;
-                    self.currentIndex = self.currentIndex + 1
-                    
-                    println("showed it");
-                }
-                
-            }
-            })
+                        })
         println("Leaving slideIt");
     }
     
