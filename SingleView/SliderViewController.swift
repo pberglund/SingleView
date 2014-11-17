@@ -25,24 +25,7 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let newFrame:CGRect = CGRectMake(0, sliderView.frame.origin.y, self.view.frame.width, self.view.frame.height);
-        
-        //self.sliderView.frame = newFrame;
-        
         self.sliderView.frame = self.view.frame;
-
-        //self.videoPath = self.label.text!
-        
-        //println(viewLabel)
-        //println(self.testPath)
-
-        //self.sliderView.frame = CGRectMake(0, 350, sliderView.frame.width, sliderView.frame.height);
-        
-        //let image = UIImage(named: "start.jpg")
-        //let resized = RBResizeImage(image!, targetSize: self.view.bounds.size)
-        
-        //self.view.backgroundColor = UIColor(patternImage: resized)
-        
     }
     
     
@@ -111,10 +94,10 @@ import UIKit
             //let vc:ViewController = ViewController()
              //let vc : AnyObject! = self.storyboard.instantiateViewControllerWithIdentifier("1StartPage")
              //self.showViewController(vc as UIViewController, sender: vc)
-            self.transitionToViewControllerByStoryboardId("1StartPage")
+            self.transitionToViewControllerByStoryboardId("")
             
         case Direction.Right:
-            self.transitionToViewControllerByStoryboardId("RightViewController")
+            self.transitionToViewControllerByStoryboardId("")
 
         default:
             println("Error finding a direction, segueWithDirection: returning")
@@ -140,6 +123,7 @@ import UIKit
         default:
             println("Error finding a direction, slideIt: returning")
             return;
+            
         }
         
         let newFrame:CGRect = CGRectMake(newX, newY, currFrame.width, currFrame.height);

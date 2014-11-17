@@ -10,10 +10,13 @@ import UIKit
 import MediaPlayer
 import AVFoundation
 
-class DashBoardController : BaseViewController {
+@IBDesignable class DashBoardController : BaseViewController {
     
     var moviePlayer:MPMoviePlayerController!
-    //var moviePlayer:AVPlayer!
+    @IBInspectable var segueAfterVideo: String!
+    @IBInspectable var videoName: String!
+    @IBInspectable var videoExtension: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,7 @@ class DashBoardController : BaseViewController {
     
     func setUpAndPlayMovie(){
         let bundle = NSBundle.mainBundle()
-        let pathhtml = bundle.pathForResource("Big_Buck_Bunny_Trailer", ofType: "m4v")
+        let pathhtml = bundle.pathForResource(videoName, ofType: videoExtension)
         var url:NSURL = NSURL(fileURLWithPath: pathhtml!)!
         
         
@@ -59,7 +62,7 @@ class DashBoardController : BaseViewController {
     }
     
     func transitionToMain(){
-        self.transitionToViewControllerByStoryboardId("1StartPage")
+        self.transitionToViewControllerBySegueIdentifier(segueAfterVideo )
         
         println("Show initial controller")
     }

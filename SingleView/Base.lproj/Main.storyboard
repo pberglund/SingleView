@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ok9-EO-LBc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ok9-EO-LBc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -124,7 +124,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1407.75" y="924.75"/>
+            <point key="canvasLocation" x="2221" y="239"/>
         </scene>
         <!--Right View-->
         <scene sceneID="sTq-TA-Tte">
@@ -172,7 +172,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2233.5" y="936.75"/>
+            <point key="canvasLocation" x="3197" y="166"/>
         </scene>
         <!--Start Page-->
         <scene sceneID="tne-QT-ifu">
@@ -221,13 +221,21 @@
                                 <include reference="fFN-0p-B5A"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VE3-Oq-ecF" appends="YES" id="YFy-oN-JnA"/>
+                        </connections>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="VE3-Oq-ecF" userLabel="Swipe to Main">
+                    <connections>
+                        <segue destination="Jfd-hA-yEI" kind="custom" identifier="From start to main" customClass="RightLeftSegue" id="Q8m-rI-0iu"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="894" y="239.25"/>
+            <point key="canvasLocation" x="1077" y="239"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="zRi-zg-iDe">
@@ -248,11 +256,16 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="segueAfterVideo" value="Custom from 1 to main"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="videoName" value="Big_Buck_Bunny_Trailer"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="videoExtension" value="m4v"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1F-1r-jGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="bax-2b-az1">
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="custom" identifier="Custom from 1 to main" customClass="LeftRightSegue" id="Y46-IC-hCD"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="Custom from 1 to main" customClass="RightLeftSegue" id="Y46-IC-hCD"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -427,5 +440,8 @@
             <point key="canvasLocation" x="321.75" y="1707"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Q8m-rI-0iu"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
 </document>

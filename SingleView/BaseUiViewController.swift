@@ -18,10 +18,17 @@ class BaseViewController : UIViewController{
         case None
     }
     
-    func transitionToViewControllerByStoryboardId(storyBoardId:String){
-        let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier(storyBoardId)
-        self.showViewController(vc as UIViewController, sender: vc)
+    func transitionToViewControllerBySegueIdentifier(segueIdentifier:String){
+        self.performSegueWithIdentifier(segueIdentifier, sender: self)
+        println("Self: \(self.description), Transition: \(segueIdentifier)")
 
+    }
+    
+    func transitionToViewControllerByStoryboardId(storyBoardId:String){
+    
+        let vc : AnyObject? = self.storyboard?.instantiateViewControllerWithIdentifier(storyBoardId)
+        self.showViewController(vc as UIViewController, sender: vc)
+    
     }
     
     func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
