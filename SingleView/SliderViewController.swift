@@ -33,8 +33,8 @@ import UIKit
 
         //self.videoPath = self.label.text!
         
-        println(viewLabel)
-        println(self.testPath)
+        //println(viewLabel)
+        //println(self.testPath)
 
         //self.sliderView.frame = CGRectMake(0, 350, sliderView.frame.width, sliderView.frame.height);
         
@@ -57,6 +57,15 @@ import UIKit
         slide(Direction.Up);
     }
     
+    @IBAction func swipedRight(sender: AnyObject) {
+        println("swiped right...")
+        slide(Direction.Left);
+    }
+    
+    @IBAction func swipedLeft(sender: AnyObject) {
+        println("swiped left...")
+        slide(Direction.Right);
+    }
     func slide(direction: Direction){
         
         // If we havent slide, and they want to slide up, return
@@ -64,18 +73,58 @@ import UIKit
             return;
         }
         
-        //IF they are trying to swipe the same way as the last time, return
+        //If they are trying to swipe the same way as the last time, return
         if(lastDirection == direction){
             return;
         }
         
-        slideIt(direction)
+        let leftOrRight = (direction == Direction.Left || direction == Direction.Right)
+
+        if(lastDirection == Direction.Up && leftOrRight){
+            
+            println("Sliding up before transistion \(direction.hashValue)")
+            
+            
+            slideIt(Direction.Down, { self.segueWithDirection(direction)})
+            
+            return;
+        }
+        
+        if(leftOrRight){
+            self.segueWithDirection(direction)
+            return
+        }
+
+
+        slideIt(direction, nil)
         lastDirection = direction;
         
     }
     
-    func slideIt(direction: Direction){
-        println("In slideIt")
+    
+    
+    func segueWithDirection(direction: Direction) -> Void{
+        
+        switch direction {
+        case Direction.Left:
+            //self.performSegueWithIdentifier("Slide To Main", sender: self)
+            //let vc:ViewController = ViewController()
+             //let vc : AnyObject! = self.storyboard.instantiateViewControllerWithIdentifier("1StartPage")
+             //self.showViewController(vc as UIViewController, sender: vc)
+            self.transitionToViewControllerByStoryboardId("1StartPage")
+            
+        case Direction.Right:
+            self.transitionToViewControllerByStoryboardId("RightViewController")
+
+        default:
+            println("Error finding a direction, segueWithDirection: returning")
+        }
+        
+        return
+    }
+    
+    func slideIt(direction: Direction, completion: (() -> Void)!){
+        //println("In slideIt")
         
         let currFrame = sliderView.frame
         
@@ -89,7 +138,7 @@ import UIKit
         case Direction.Down:
             newY += transitionDistance
         default:
-            println("Error finding a direction, returning")
+            println("Error finding a direction, slideIt: returning")
             return;
         }
         
@@ -98,15 +147,18 @@ import UIKit
         UIView.animateWithDuration(2.0, animations: {
             
             self.sliderView.frame = newFrame
-            println("sliding...")
+            //println("sliding...")
             
             }, completion: {
             (value: Bool) in
             
-                println("Done sliding")
+                //println("Done sliding")
+                if((completion) != nil){
+                    completion()
+                }
                 
                         })
-        println("Leaving slideIt");
+        //println("Leaving slideIt");
     }
     
     override func didReceiveMemoryWarning() {

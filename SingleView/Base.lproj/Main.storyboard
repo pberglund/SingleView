@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Slider View Controller-->
+        <!--Main Content Page-->
         <scene sceneID="i6H-Du-J8x">
             <objects>
-                <viewController storyboardIdentifier="2SecondPage" id="Jfd-hA-yEI" customClass="SliderViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="2SecondPage" id="Jfd-hA-yEI" userLabel="Main Content Page" customClass="SliderViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bvs-eX-iCj"/>
                         <viewControllerLayoutGuide type="bottom" id="pZa-yL-GKM"/>
@@ -25,6 +25,9 @@
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="357" y="33" width="104" height="21"/>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SiL-En-SQP" appends="YES" id="d37-Wi-XDR"/>
+                                </connections>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKl-BV-Huq">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -84,8 +87,9 @@
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="IFm-jI-axF"/>
-                            <outletCollection property="gestureRecognizers" destination="Rfn-5r-gtT" appends="YES" id="aZ9-tB-apl"/>
                             <outletCollection property="gestureRecognizers" destination="om9-Yn-H1Y" appends="YES" id="2Gr-Rj-H9u"/>
+                            <outletCollection property="gestureRecognizers" destination="pXQ-aY-cjZ" appends="YES" id="PJt-GX-0Z5"/>
+                            <outletCollection property="gestureRecognizers" destination="SiL-En-SQP" appends="YES" id="UcO-HQ-DS6"/>
                         </connections>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -100,28 +104,80 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieD-zR-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Rfn-5r-gtT">
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="custom" customClass="LeftRightSegue" id="CXw-YG-kyI"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="om9-Yn-H1Y">
+                <swipeGestureRecognizer direction="down" id="om9-Yn-H1Y" userLabel="Down Swipe">
                     <connections>
                         <action selector="swipedDown:" destination="Jfd-hA-yEI" id="xCu-Oa-KE9"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="vlP-6q-ni2">
+                <swipeGestureRecognizer direction="up" id="vlP-6q-ni2" userLabel="Up Swipe">
                     <connections>
                         <action selector="swipedUp:" destination="Jfd-hA-yEI" id="xr4-uC-Ilz"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="pXQ-aY-cjZ" userLabel="Left Swipe">
+                    <connections>
+                        <action selector="swipedLeft:" destination="Jfd-hA-yEI" id="OrV-Eo-bMe"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="SiL-En-SQP" userLabel="Right Swipe">
+                    <connections>
+                        <action selector="swipedRight:" destination="Jfd-hA-yEI" id="1E7-g0-c8Q"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1407.75" y="924.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Right View-->
+        <scene sceneID="sTq-TA-Tte">
+            <objects>
+                <viewController storyboardIdentifier="RightViewController" id="RgT-As-iKT" userLabel="Right View" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LN9-RT-R2D"/>
+                        <viewControllerLayoutGuide type="bottom" id="IXT-a8-sh8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c65-OM-3fR" userLabel="Dummy View">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLR-Wy-hGH">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="329" y="384" width="82" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="eLR-Wy-hGH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="eLR-Wy-hGH"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8i7-ce-G2N" appends="YES" id="soG-54-rHm"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SlH-2k-KRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8i7-ce-G2N">
+                    <connections>
+                        <segue destination="Jfd-hA-yEI" kind="show" id="dRR-3X-1wK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2233.5" y="936.75"/>
+        </scene>
+        <!--Start Page-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="1StartPage" modalTransitionStyle="partialCurl" id="BYZ-38-t0r" customClass="ViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1StartPage" modalTransitionStyle="partialCurl" id="BYZ-38-t0r" userLabel="Start Page" customClass="ViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -181,10 +237,10 @@
             </objects>
             <point key="canvasLocation" x="372" y="648.75"/>
         </scene>
-        <!--Dash Board Controller-->
+        <!--Video View Controller-->
         <scene sceneID="zRi-zg-iDe">
             <objects>
-                <viewController storyboardIdentifier="3VideoPage" modalTransitionStyle="partialCurl" id="Ok9-EO-LBc" customClass="DashBoardController" customModule="SingleView" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="3VideoPage" modalTransitionStyle="partialCurl" id="Ok9-EO-LBc" userLabel="Video View Controller" customClass="DashBoardController" customModule="SingleView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nhL-kf-m1d"/>
                         <viewControllerLayoutGuide type="bottom" id="gij-2M-Oti"/>
@@ -210,10 +266,10 @@
             </objects>
             <point key="canvasLocation" x="1341.75" y="295.5"/>
         </scene>
-        <!--Slider View Controller-->
+        <!--Sliding Experiment 1-->
         <scene sceneID="9Mu-yh-lNK">
             <objects>
-                <viewController storyboardIdentifier="4thirdPage" id="pKs-Wo-MHM" customClass="SliderViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="4thirdPage" id="pKs-Wo-MHM" userLabel="Sliding Experiment 1" customClass="SliderViewController" customModule="SingleView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V6c-Tl-iut"/>
                         <viewControllerLayoutGuide type="bottom" id="zfw-oD-7we"/>
@@ -380,8 +436,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CXw-YG-kyI"/>
         <segue reference="UY2-4i-Dwv"/>
+        <segue reference="dRR-3X-1wK"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
 </document>

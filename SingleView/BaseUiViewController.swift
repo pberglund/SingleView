@@ -18,6 +18,12 @@ class BaseViewController : UIViewController{
         case None
     }
     
+    func transitionToViewControllerByStoryboardId(storyBoardId:String){
+        let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier(storyBoardId)
+        self.showViewController(vc as UIViewController, sender: vc)
+
+    }
+    
     func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         
