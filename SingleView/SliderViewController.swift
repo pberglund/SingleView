@@ -10,9 +10,10 @@ import UIKit
 
 @IBDesignable class SliderViewController : BaseViewController {
     
-    var videoPath:String!
-    @IBInspectable var viewLabel: String!
-    var testPath: String!
+    @IBInspectable var videName:String!
+    @IBInspectable var videoExtension: String!
+    @IBInspectable var leftSegueIdentifier: String!
+    @IBInspectable var rightSequeIdentifier: String!
 
 
     
@@ -49,6 +50,22 @@ import UIKit
         println("swiped left...")
         slide(Direction.Right);
     }
+    //override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+    //    return false;
+    //}
+    
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == leftSegueIdentifier){
+            println("swiped left...")
+            slide(Direction.Right);
+        }
+        
+        if(segue.identifier == rightSequeIdentifier){
+            println("swiped right...")
+            slide(Direction.Left);
+        }
+    }*/
+    
     func slide(direction: Direction){
         
         // If we havent slide, and they want to slide up, return
@@ -94,10 +111,10 @@ import UIKit
             //let vc:ViewController = ViewController()
              //let vc : AnyObject! = self.storyboard.instantiateViewControllerWithIdentifier("1StartPage")
              //self.showViewController(vc as UIViewController, sender: vc)
-            self.transitionToViewControllerByStoryboardId("")
+            self.transitionToViewControllerBySegueIdentifier(leftSegueIdentifier)
             
         case Direction.Right:
-            self.transitionToViewControllerByStoryboardId("")
+            self.transitionToViewControllerBySegueIdentifier(rightSequeIdentifier)
 
         default:
             println("Error finding a direction, segueWithDirection: returning")

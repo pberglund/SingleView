@@ -20,12 +20,12 @@ import AVFoundation
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpAndPlayMovie()
+        self.setUpAndPlayMovie(videoName,fileExtension: videoExtension )
     }
     
-    func setUpAndPlayMovie(){
+    func setUpAndPlayMovie(fileName:String, fileExtension:String){
         let bundle = NSBundle.mainBundle()
-        let pathhtml = bundle.pathForResource(videoName, ofType: videoExtension)
+        let pathhtml = bundle.pathForResource(fileName, ofType: fileExtension)
         var url:NSURL = NSURL(fileURLWithPath: pathhtml!)!
         
         

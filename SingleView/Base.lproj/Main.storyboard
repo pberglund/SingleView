@@ -94,12 +94,16 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1200" height="768"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="testPath" value="testRuntimeAtrributes"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="viewLabel" value="tetsLabel"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftSegueIdentifier" value="Main to start"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="videName" value="Big_Buck_Bunny_Trailer"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="videoExtension" value="m4v"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="rightSequeIdentifier" value="Main to right"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="label" destination="C0z-FQ-lyJ" id="lHP-MS-I0e"/>
                         <outlet property="sliderView" destination="fKl-BV-Huq" id="b5W-uS-J12"/>
+                        <segue destination="RgT-As-iKT" kind="custom" identifier="Main to right" customClass="RightLeftSegue" id="LMd-5i-y9u"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="Main to start" customClass="LeftRightSegue" id="UQl-tf-M9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieD-zR-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -229,7 +233,7 @@
                     <size key="freeformSize" width="1024" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="VE3-Oq-ecF" userLabel="Swipe to Main">
+                <swipeGestureRecognizer direction="left" id="VE3-Oq-ecF" userLabel="Swipe to Main">
                     <connections>
                         <segue destination="Jfd-hA-yEI" kind="custom" identifier="From start to main" customClass="RightLeftSegue" id="Q8m-rI-0iu"/>
                     </connections>
@@ -263,7 +267,7 @@
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1F-1r-jGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="bax-2b-az1">
+                <swipeGestureRecognizer direction="left" id="bax-2b-az1">
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="Custom from 1 to main" customClass="RightLeftSegue" id="Y46-IC-hCD"/>
                     </connections>
@@ -441,7 +445,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Q8m-rI-0iu"/>
+        <segue reference="dRR-3X-1wK"/>
+        <segue reference="UQl-tf-M9v"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
 </document>
