@@ -17,16 +17,19 @@ class DashBoardController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setUpAndPlayMovie()
+    }
+    
+    func setUpAndPlayMovie(){
         let bundle = NSBundle.mainBundle()
         let pathhtml = bundle.pathForResource("Big_Buck_Bunny_Trailer", ofType: "m4v")
         var url:NSURL = NSURL(fileURLWithPath: pathhtml!)!
-
+        
         
         moviePlayer = MPMoviePlayerController(contentURL: url)
-
+        
         moviePlayer.view.frame = self.view.bounds
-    
+        
         moviePlayer.fullscreen = true
         
         moviePlayer.shouldAutoplay = true
@@ -34,7 +37,7 @@ class DashBoardController : BaseViewController {
         //moviePlayer.movieSourceType = MPMovieSourceType.Streaming
         
         //moviePlayer.scalingMode = MPMovieScalingMode.AspectFill
-
+        
         moviePlayer.controlStyle = MPMovieControlStyle.Embedded
         
         moviePlayer.initialPlaybackTime = 28;
@@ -44,25 +47,31 @@ class DashBoardController : BaseViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayerOver:", name: MPMoviePlayerPlaybackDidFinishNotification, object: moviePlayer)
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "moviePlayerOver:", name: MPMoviePlayerDidExitFullscreenNotification, object: moviePlayer)
-
+        
         
         
         self.view.bringSubviewToFront(moviePlayer.view)
-
+        
         moviePlayer.play()
         
         println("Playing Movie");
+
+    }
+    
+    func transitionToMain(){
+        self.transitionToViewControllerByStoryboardId("1StartPage")
+        
+        println("Show initial controller")
     }
     
     @objc
     func moviePlayerOver(notification: NSNotification){
     //Action take on Notification
         println("In moviePlayerDidFinishPlaying");
-        //let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("StartPage")
-        //self.showViewController(vc as UIViewController, sender: vc)
-        self.performSegueWithIdentifier("Custom from 1 to main", sender: self)
+        
+        //self.performSegueWithIdentifier("Custom from 1 to main", sender: self)
 
-        println("Show initial controller")
+         transitionToMain()
 
 
 }

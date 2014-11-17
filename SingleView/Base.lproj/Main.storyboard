@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ok9-EO-LBc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pZa-yL-GKM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WyH-m4-okD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1200" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0z-FQ-lyJ">
@@ -86,7 +86,6 @@
                             </mask>
                         </variation>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="IFm-jI-axF"/>
                             <outletCollection property="gestureRecognizers" destination="om9-Yn-H1Y" appends="YES" id="2Gr-Rj-H9u"/>
                             <outletCollection property="gestureRecognizers" destination="pXQ-aY-cjZ" appends="YES" id="PJt-GX-0Z5"/>
                             <outletCollection property="gestureRecognizers" destination="SiL-En-SQP" appends="YES" id="UcO-HQ-DS6"/>
@@ -136,6 +135,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IXT-a8-sh8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="c65-OM-3fR" userLabel="Dummy View">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLR-Wy-hGH">
@@ -196,12 +196,19 @@
                                     <rect key="frame" x="353" y="182" width="82" height="21"/>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fFN-0p-B5A">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="930" y="0.0" width="94" height="57"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Wdi-Qb-md0"/>
+                                <exclude reference="fFN-0p-B5A"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=regular">
@@ -209,33 +216,18 @@
                                 <include reference="Wdi-Qb-md0"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="n7j-rT-6hv" appends="YES" id="8YI-9r-Ddy"/>
-                            <outletCollection property="gestureRecognizers" destination="kJh-5b-keh" appends="YES" id="vIe-4O-txl"/>
-                            <outletCollection property="gestureRecognizers" destination="rPe-4G-2a9" appends="YES" id="AA4-Qq-HoY"/>
-                        </connections>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="fFN-0p-B5A"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="n7j-rT-6hv">
-                    <connections>
-                        <segue destination="Ok9-EO-LBc" kind="custom" identifier="Slide from main to one" customClass="RightLeftSegue" id="2Q6-Ft-aLf"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <tapGestureRecognizer id="kJh-5b-keh">
-                    <connections>
-                        <segue destination="Ok9-EO-LBc" kind="custom" identifier="Tap from main to one" customClass="RightLeftSegue" id="UY2-4i-Dwv"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="down" id="rPe-4G-2a9">
-                    <connections>
-                        <segue destination="Jfd-hA-yEI" kind="custom" identifier="Right left from main to slider" customClass="RightLeftSegue" id="jP5-Wf-7AI"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="372" y="648.75"/>
+            <point key="canvasLocation" x="894" y="239.25"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="zRi-zg-iDe">
@@ -264,7 +256,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1341.75" y="295.5"/>
+            <point key="canvasLocation" x="-109.5" y="239.25"/>
         </scene>
         <!--Sliding Experiment 1-->
         <scene sceneID="9Mu-yh-lNK">
@@ -435,9 +427,5 @@
             <point key="canvasLocation" x="321.75" y="1707"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="UY2-4i-Dwv"/>
-        <segue reference="dRR-3X-1wK"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.98117044718108004" blue="0.14971081992613089" alpha="1" colorSpace="calibratedRGB"/>
 </document>
